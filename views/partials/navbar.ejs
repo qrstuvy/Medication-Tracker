@@ -1,0 +1,9 @@
+<ul>
+    <li><a href="/">Home</a></li>
+    <% if (user) { %>
+      <li><a href="/profiles">Profiles</a></li>
+      <li><a href="/logout">Log Out</a></li>
+      <% } else { %>
+        <li><a href="/auth/google">Log In</a></li>
+        <% } %>
+  </ul>
