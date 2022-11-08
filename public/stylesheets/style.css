@@ -1,6 +1,9 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(217, 217, 217);
+  height: 100vh;
+  grid-template-rows: 80px 1fr;
 }
 
 ul {
@@ -9,4 +12,12 @@ ul {
 
 a {
   color: #00B7FF;
+}
+
+.hide {
+  display: none;
+}
+
+.navbar-expand-lg {
+  padding: 10px 20px;
 }

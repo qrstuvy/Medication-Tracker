@@ -17,12 +17,10 @@ const profileSchema = new Schema(
   {
     name: String,
     dateOfBirth: Date,
-    insurance: {
-      insName: String,
-      memberId: String,
-      binNo: Number,
-      pcn: String
-    },
+    insName: String,
+    memberId: String,
+    binNo: Number,
+    pcn: String,
     medications: [medicationSchema]
   },
   { timeStamps: true }

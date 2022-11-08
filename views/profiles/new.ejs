@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<form action="/profiles" method="POST" autocomplete="off">
+    <label>Name:</label>
+<input type="string" name="name">
+<br>
+
+<label>Date of Birth:</label>
+<input type="date" name="dateOfBirth">
+<br>
+
+<label>insurance:</label>
+<input type="number" min="10" max="9999" name="flightNo">
+<br>
+
+
+<label>Departure Date/Time:
+<input type="datetime-local" name="departs">
+</label><br>
+<input type="submit" value="Add Flight">
+</form>

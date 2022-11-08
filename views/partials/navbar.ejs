@@ -1,9 +1,21 @@
-<ul>
-    <li><a href="/">Home</a></li>
-    <% if (user) { %>
-      <li><a href="/profiles">Profiles</a></li>
-      <li><a href="/logout">Log Out</a></li>
-      <% } else { %>
-        <li><a href="/auth/google">Log In</a></li>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">MedTracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a></li>
+          <% if (user) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/profiles">Profiles</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/google">Log In</a>
+        </li>
         <% } %>
-  </ul>
+      </ul>
+    </div>
+  </nav>

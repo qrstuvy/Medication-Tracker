@@ -47,7 +47,7 @@ app.use(function (req, res, next) {
 
 // ROUTES
 app.use("/", indexRouter);
-app.use("/users", profilesRouter);
+app.use("/profiles", profilesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
