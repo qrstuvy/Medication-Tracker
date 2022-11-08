@@ -17,6 +17,7 @@ const profileSchema = new Schema(
   {
     name: String,
     dateOfBirth: Date,
+    insurance: { type: Boolean, default: false },
     insName: String,
     memberId: String,
     binNo: Number,

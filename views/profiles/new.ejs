@@ -1,22 +1,28 @@
 <%- include('../partials/header') %>
 <%- include('../partials/navbar') %>
 
+<h3>Create a Profile</h3>
 <form action="/profiles" method="POST" autocomplete="off">
-    <label>Name:</label>
+<label>Patient Information:</label><br><br>
+<label>Name:</label>
 <input type="string" name="name">
 <br>
 
 <label>Date of Birth:</label>
 <input type="date" name="dateOfBirth">
+<br><br>
+
+<label>Insurance Information:</label><br><br>
+<label>No insurance:</label>
+<input type="checkbox" name="insurance"><br>
+<label>Insurance name:</label>
+<input type="string" name="insName"><br>
+<label>Member ID:</label>
+<input type="string" name="memberId"><br>
+<label>BIN Number:</label>
+<input type="number" name="binNo"><br>
+<label>PCN:</label>
+<input type="string" name="pcn"><br>
 <br>
-
-<label>insurance:</label>
-<input type="number" min="10" max="9999" name="flightNo">
-<br>
-
-
-<label>Departure Date/Time:
-<input type="datetime-local" name="departs">
-</label><br>
-<input type="submit" value="Add Flight">
+<input type="submit" value="Add Profile">
 </form>
