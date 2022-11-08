@@ -10,10 +10,6 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Home / Public Page" });
 });
 
-router.get("/profiles", isLoggedIn, function (req, res) {
-  res.render("profiles", { title: "Profile Page" });
-});
-
 // OAuth Routes
 
 // Go to Google OAuth Login Menu

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+    <%- include('../partials/header') %>
+    <%- include('../partials/navbar') %>
+
+<body>
+    <p>Welcome to <%= title %></p>
+    <p><a href="profiles/new">Create a new profile</a></p>
+
+
+    <table id="list">
+        <thead>
+            <% profiles.forEach(function(p) { %>
+          <tr>
+            <th><a href="/profiles/<%= p._id %>"><%= p.name %></a></th>
+          </tr>
+          <% }); %>
+        </thead>
+        </table>
+
+
+</body>
+
+</html>

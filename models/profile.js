@@ -20,6 +20,7 @@ const profileSchema = new Schema(
     insurance: { type: Boolean, default: false },
     insName: String,
     memberId: String,
+    group: String,
     binNo: Number,
     pcn: String,
     medications: [medicationSchema]
