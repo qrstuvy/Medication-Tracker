@@ -14,6 +14,9 @@
             <% profiles.forEach(function(p) { %>
           <tr>
             <th><a href="/profiles/<%= p._id %>"><%= p.name %></a></th>
+            <th> <form action="/profiles/<%= p._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form></th>
           </tr>
           <% }); %>
         </thead>

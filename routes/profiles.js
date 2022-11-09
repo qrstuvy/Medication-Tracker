@@ -8,5 +8,6 @@ router.get("/", isLoggedIn, profilesCtrl.index);
 router.get('/new', isLoggedIn, profilesCtrl.new);
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 router.post('/', profilesCtrl.create);
+router.delete('/:id', profilesCtrl.delete)
 
 module.exports = router;

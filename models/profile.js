@@ -3,14 +3,13 @@ const Schema = mongoose.Schema;
 
 const medicationSchema = new Schema ({
   medName: String,
+  dosage: String,
   quantity: {
       type: Number,
-      min: 0
+      min: 1
   },
   directions: String,
-  timeTaken: Date,
-  startDate: Date,
-  endDate: Date
+  daySupply: String
 })
 
 const profileSchema = new Schema(

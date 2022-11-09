@@ -13,6 +13,7 @@ require("./config/passport");
 
 var indexRouter = require("./routes/index");
 var profilesRouter = require("./routes/profiles");
+var medicationsRouter = require('./routes/medications');
 
 var app = express();
 
@@ -48,6 +49,7 @@ app.use(function (req, res, next) {
 // ROUTES
 app.use("/", indexRouter);
 app.use("/profiles", profilesRouter);
+app.use('/', medicationsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

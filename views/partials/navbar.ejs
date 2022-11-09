@@ -5,17 +5,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+        <% if (user) { %>
         <li class="nav-item">
-          <a class="nav-link" href="/">Home</a></li>
-          <% if (user) { %>
+         <a class="nav-link" href="/">Home</a></li>   
         <li class="nav-item">
-          <a class="nav-link" href="/profiles">Profiles</a>
+          <a class="nav-link" href="/profiles">Profiles</a> </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log Out</a>
         </li>
         <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a></li>   
         <li class="nav-item">
-          <a class="nav-link" href="/auth/google">Log In</a>
+          <a class="nav-link" href="/auth/google">Log In | Sign up to access app features
+          </a>
         </li>
         <% } %>
       </ul>
     </div>
   </nav>
+
+
+
+
+  

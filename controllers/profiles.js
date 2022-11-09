@@ -4,7 +4,8 @@ module.exports = {
     new: newProfile,
     create,
     index,
-    show
+    show,
+    delete: deleteProfile
 }
 
 function index(req, res) {
@@ -34,3 +35,12 @@ function show(req, res){
         res.render('profiles/show', { title: 'Profile Detail', profile });
     });
 }
+
+function deleteProfile(req, res) {
+    console.log("profile")
+    Profile.findOne({'_id': req.params.id}).then(function(profile) {
+        console.log(profile)
+      profile.remove();
+        res.redirect(`/profiles`);
+      });
+    }

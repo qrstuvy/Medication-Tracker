@@ -6,8 +6,26 @@ body {
   grid-template-rows: 80px 1fr;
 }
 
-ul {
-  list-style: none;
+
+#medication-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+
+a {
+  color: #096b92;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+table {
+margin: 20px;
 }
 
 a {
