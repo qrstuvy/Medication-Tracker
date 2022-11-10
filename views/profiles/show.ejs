@@ -37,7 +37,7 @@
       <tbody>
         <% profile.medications.forEach(function(m) { %>
           <tr>
-            <td><%= m.medName %></td>
+            <td><a href="/profiles/<%= profile._id %>/medications/<%= m._id %>/edit"><%= m.medName %> <%= m.dosage %></a></td>
             <td><%= m.directions %></td>
             <td><%= m.quantity %></td>
             <td><%= m.daySupply %></td>

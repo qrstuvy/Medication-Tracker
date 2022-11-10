@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+
+<h3>Update Medication</h3>
+<form action="/profiles/<%= profile._id %>/medications/<%= medication._id %>/?_method=PUT" method="POST" autocomplete="off">
+  Name: <input type="text" name="medName" value="<%= medication.medName %>"><br>
+  Dosage: <input type="text" name="dosage" value="<%= medication.dosage %>"><br>
+  Directions: <input type="text" name="directions" value="<%= medication.directions %>"><br>
+  Quantity: <input type="text" name="quantity" value="<%= medication.quantity %>"><br>
+  Day Supply: <input type="text" name="daySupply" value="<%= medication.daySupply %>"><br>
+  <button type="submit">Save Medication</button>
+</form>

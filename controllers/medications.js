@@ -2,7 +2,9 @@ const Profile = require('../models/profile')
 
 module.exports = {
     create,
-    delete: deleteMedication
+    delete: deleteMedication,
+    update,
+    edit
 }
 
 function create(req, res) {
@@ -28,3 +30,15 @@ function deleteMedication(req, res, next) {
       });
     });
   }
+
+function edit(req, res){
+  Profile.findOne({'medications._id': req.params.id}).then(function(profile) {
+    const medication = profile.medications.id(req.params.id);
+    res.render('medications/edit', { title: 'Medication Update', medication, profile })
+  });
+}
+
+function update(req, res) {
+  Todo.update(req.params.id, req.body);
+  res.redirect('/todos');
+}

@@ -37,9 +37,7 @@ function show(req, res){
 }
 
 function deleteProfile(req, res) {
-    console.log("profile")
     Profile.findOne({'_id': req.params.id}).then(function(profile) {
-        console.log(profile)
       profile.remove();
         res.redirect(`/profiles`);
       });

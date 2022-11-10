@@ -7,7 +7,7 @@ const isLoggedIn = require("../config/auth");
 router.get("/", isLoggedIn, profilesCtrl.index);
 router.get('/new', isLoggedIn, profilesCtrl.new);
 router.get('/:id', isLoggedIn, profilesCtrl.show)
-router.post('/', profilesCtrl.create);
-router.delete('/:id', profilesCtrl.delete)
+router.post('/', isLoggedIn, profilesCtrl.create);
+router.delete('/:id', isLoggedIn, profilesCtrl.delete)
 
 module.exports = router;
