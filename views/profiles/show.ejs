@@ -22,11 +22,15 @@
     </div>
     <% } %>
   </section>
+  <a href="/profiles/<%= profile._id %>/pharmacy/new">Add Pharmacy</a><br>
+<a href="/profiles/<%= profile._id %>/medications/new">Add Medication</a>
 
+<% if (profile.medications.length) { %>
   <section id="medication-list">
     <table>
       <thead>
         <tr>
+          <th>Edit</th>
           <th>Medication</th>
           <th>Directions</th>
           <th>Qty</th>
@@ -37,7 +41,8 @@
       <tbody>
         <% profile.medications.forEach(function(m) { %>
           <tr>
-            <td><a href="/profiles/<%= profile._id %>/medications/<%= m._id %>/edit"><%= m.medName %> <%= m.dosage %></a></td>
+            <td><a href="/profiles/<%= profile._id %>/medications/<%= m._id %>/edit"><img src="/images/edit.png" width="20px" height="20px"></a>
+            <td><%= m.medName %> <%= m.dosage %></td>
             <td><%= m.directions %></td>
             <td><%= m.quantity %></td>
             <td><%= m.daySupply %></td>
@@ -48,22 +53,9 @@
             </td>
           </tr>
           <% }); %>
+          <% } else { %>
+            <h5>No Medication Added Yet</h5>
+            <% } %>
       </tbody>
     </table>
   </section>
-
-  <form action="/profiles/<%= profile._id %>/medications" method="POST" autocomplete="off">
-    <label>Medication Information:</label><br><br>
-    <label>Medication Name:</label>
-    <input type="string" name="medName"><br>
-    <label>Dosage:</label>
-    <input type="string" name="dosage"><br>
-    <label>Directions:</label>
-    <input type="string" name="directions"><br>
-    <label>Quantity:</label>
-    <input type="number" min="1" name="quantity"><br>
-    <label>Day Supply:</label>
-    <input type="number" min="1" name="daySupply">
-    <br>
-    <input type="submit" value="Add Medication">
-    </form>

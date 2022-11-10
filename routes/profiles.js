@@ -4,6 +4,9 @@ var profilesCtrl = require('../controllers/profiles')
 const isLoggedIn = require("../config/auth");
 
 /* GET users listing. */
+
+router.get('/:id/edit', isLoggedIn, profilesCtrl.edit);
+router.put('/:id', isLoggedIn, profilesCtrl.update);
 router.get("/", isLoggedIn, profilesCtrl.index);
 router.get('/new', isLoggedIn, profilesCtrl.new);
 router.get('/:id', isLoggedIn, profilesCtrl.show)

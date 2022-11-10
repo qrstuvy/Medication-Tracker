@@ -5,11 +5,11 @@
 <form action="/profiles" method="POST" autocomplete="off">
 <label>Patient Information:</label><br><br>
 <label>Name:</label>
-<input type="string" name="name">
+<input type="string" name="name" required>
 <br>
 
 <label>Date of Birth:</label>
-<input type="date" name="dateOfBirth">
+<input type="date" name="dateOfBirth" required>
 <br><br>
 
 <label>Insurance Information:</label><br><br>
@@ -22,7 +22,7 @@
 <label>Group:</label>
 <input type="string" name="group"><br>
 <label>BIN Number:</label>
-<input type="number" name="binNo"><br>
+<input type="string" name="binNo"><br>
 <label>PCN:</label>
 <input type="string" name="pcn"><br>
 <br>

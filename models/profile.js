@@ -20,7 +20,7 @@ const profileSchema = new Schema(
     insName: String,
     memberId: String,
     group: String,
-    binNo: Number,
+    binNo: String,
     pcn: String,
     medications: [medicationSchema]
   },

@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+  <form action="/profiles/<%= profile._id %>/medications" method="POST" autocomplete="off">
+    <label>Medication Information:</label><br><br>
+    <label>Medication Name:</label><br>
+    <input type="string" name="medName"><br>
+    <label>Dosage:</label><br>
+    <input type="string" name="dosage"><br>
+    <label>Directions:</label><br>
+    <textarea type="string" name="directions"></textarea><br>
+    <label>Quantity:</label><br>
+    <input type="number" min="1" name="quantity"><br>
+    <label>Day Supply:</label><br>
+    <input type="number" min="1" name="daySupply">
+    <br>
+    <input type="submit" value="Add Medication">
+    </form>

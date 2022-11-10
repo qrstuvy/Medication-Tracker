@@ -1,23 +1,29 @@
  <%- include('../partials/header') %>
-    <%- include('../partials/navbar') %>
+  <%- include('../partials/navbar') %>
 
 <body>
     <p>Welcome to <%= title %></p>
     <p><a href="profiles/new">Create a new profile</a></p>
 
-
-    <table id="list">
-        <thead>
-            <% profiles.forEach(function(p) { %>
-          <tr>
-            <th><a href="/profiles/<%= p._id %>"><%= p.name %></a></th>
-            <th> <form action="/profiles/<%= p._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
-            </form></th>
-          </tr>
-          <% }); %>
-        </thead>
-        </table>
+   
+  <div class="row justify-content-center">
+    <% profiles.forEach(function(p){ %>
+    <div class="container card text-center col-md-3">
+      <div class="card-header row">
+        <img src="" class="card-img-top">
+      <h5 class="card-title"><a href="/profiles/<%= p._id %>"><%= p.name %></a> <a href="/profiles/<%= p._id %>/edit"><img src="/images/edit.png" width="23px" height="23px"></a></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Medications List</li>
+    </ul>
+    <div class="card-body">
+      <form action="/profiles/<%= p._id %>?_method=DELETE" method="POST">
+        <input type="image" src="/images/delete.png" width="23px" height="23px"></input>
+        </form>
+    </div>
+  </div>
+  <% }); %>
 
 
 </body>

@@ -5,7 +5,9 @@ module.exports = {
     create,
     index,
     show,
-    delete: deleteProfile
+    delete: deleteProfile,
+    edit,
+    update
 }
 
 function index(req, res) {
@@ -41,4 +43,28 @@ function deleteProfile(req, res) {
       profile.remove();
         res.redirect(`/profiles`);
       });
+    }
+
+    function edit(req, res){
+      Profile.findOne({'_id': req.params.id}).then(function(profile) {
+        res.render('profiles/edit', { title: 'Profile Update', profile })
+      });
+    }
+
+    function update(req, res) {
+      Profile.findOne({'_id': req.params.id})
+      .then(function(profile) {
+        profile.name = req.body.name
+        profile.dateOfBirth = req.body.dateOfBirth
+        profile.insName = req.body.insName
+        profile.memberId = req.body.memberId
+        profile.group = req.body.group
+        profile.binNo = req.body.binNo
+        profile.pcn = req.body.pcn
+        console.log(req.body.insurance)
+        profile.save(function(err) {
+          if (err) return res.redirect('/profiles');
+          res.redirect('/profiles');
+        });
+    })
     }

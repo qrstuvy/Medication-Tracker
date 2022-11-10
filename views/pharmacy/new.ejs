@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<h5>Add Pharmacy Information</h5>
+<form action="/profiles/<%= profile._id %>" method="POST" autocomplete="off">
+<label>Pharmacy Name:</label><br>
+<input type="string" name="pharmName" required><br>
+<label>Address:</label><br>
+<textarea type="string" name="address" required></textarea><br>
+<label>Phone Number:</label><br>
+<input type="tel" name="insName"><br><br>
+<input type="submit" value="Add Pharmacy">
+</form>

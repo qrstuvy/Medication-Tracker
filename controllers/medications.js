@@ -1,18 +1,22 @@
 const Profile = require('../models/profile')
 
 module.exports = {
-    create,
-    delete: deleteMedication,
-    update,
-    edit
+  new: newMedication,  
+  create,
+  delete: deleteMedication,
+  edit,
+  update
+}
+
+function newMedication(req, res){
+  Profile.findById(req.params.id, function(err, profile) {
+  res.render('medications/new', { title: 'Add Medication', profile })
+})
 }
 
 function create(req, res) {
     Profile.findById(req.params.id, function(err, profile) {
     profile.medications.push(req.body)
-    console.log(req.params.id)
-    console.log(profile)
-    console.log(req.body)
     profile.save(function(err) {
         res.redirect(`/profiles/${profile._id}`);
       });
@@ -39,6 +43,19 @@ function edit(req, res){
 }
 
 function update(req, res) {
-  Todo.update(req.params.id, req.body);
-  res.redirect('/todos');
+  Profile.findOne({'medications._id': req.params.id})
+  .then(function(profile) {
+    const medication = profile.medications.id(req.params.id);
+    medication.medName = req.body.medName
+    medication.dosage = req.body.dosage
+    medication.directions = req.body.directions
+    medication.quantity = req.body.quantity
+    medication.daySupply = req.body.daySupply
+
+    profile.save(function(err) {
+      if (err) return res.redirect('/profiles');
+      res.redirect(`/profiles/${profile._id}`);
+    });
+})
 }
+
