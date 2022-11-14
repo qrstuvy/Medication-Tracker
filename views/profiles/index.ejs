@@ -3,29 +3,47 @@
 
 <body>
     <p>Welcome to <%= title %></p>
-    <p><a href="profiles/new">Create a new profile</a></p>
+    <a href="/" class="btn btn-outline-primary"> Back</a>
+    <a href="/profiles/new" class="btn btn-outline-success"> Create a new profile</a>
 
-   
+    <br> <br>
   <div class="row justify-content-center">
     <% profiles.forEach(function(p){ %>
-    <div class="container card text-center col-md-3">
+    <div class="container card text-center col-md-3" style="background-color: #98c7e2;">
       <div class="card-header row">
-        <img src="" class="card-img-top">
-      <h5 class="card-title"><a href="/profiles/<%= p._id %>"><%= p.name %></a> <a href="/profiles/<%= p._id %>/edit"><img src="/images/edit.png" width="23px" height="23px"></a></h5>
+    <% if(p.image) { %>
+        <img src="<%= p.image %>" class="card-img-top" width="50px" height="250px">
+        <h5 class="card-title"><%= p.name %> <a href="/profiles/<%= p._id %>/edit"><img src="/images/edit.png" width="18px" height="18px"></a></h5>
+        <p class="card-text">Relationship: <%= p.relationship %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="background-color: #d7eaf4;"><a href="/profiles/<%= p._id %>">Patient Information</a></li>
+   
+        <li class="list-group-item" style="background-color: #d7eaf4;"><a href="/profiles/<%= p._id %>/medications">Medications List</a></li>
+      </ul>
+      <div class="card-body">
+        <form action="/profiles/<%= p._id %>?_method=DELETE" method="POST">
+          <input type="image" src="/images/delete.png" width="20px" height="20px"></input>
+          </form>
+        </div>
+      </div>
+        <% } else  { %>
+      <h5 class="card-title"><%= p.name %> <a href="/profiles/<%= p._id %>/edit"><img src="/images/edit.png" width="18px" height="18px"></a></h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Medications List</li>
+      <li class="list-group-item" style="background-color: #d7eaf4;"><a href="/profiles/<%= p._id %>">Patient Information</a></li>
+ 
+      <li class="list-group-item" style="background-color: #d7eaf4;"><a href="/profiles/<%= p._id %>/medications">Medications List</a></li>
     </ul>
     <div class="card-body">
       <form action="/profiles/<%= p._id %>?_method=DELETE" method="POST">
-        <input type="image" src="/images/delete.png" width="23px" height="23px"></input>
+        <input type="image" src="/images/delete.png" width="20px" height="20px"></input>
         </form>
     </div>
   </div>
-  <% }); %>
-
-
+  <% }}); %>
 </body>
 
-</html>
+
+<%- include('../partials/footer') %>

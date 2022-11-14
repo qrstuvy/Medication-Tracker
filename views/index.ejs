@@ -3,9 +3,162 @@
 
 
 <body>
-  <p>Welcome to <%= title %>
-  </p>
+  <main>
+  <div class="container-md">
+    <h1 class="text-center">MedTracker</h1>
+    <div class="border border-dark border-2 opacity-25 mb-4">
+    </div>
+    <img class="header-img" src="/images/header.jpeg">
+    <div class="alert text-center" style="background-color: #98c7e2;">
+        <h5> Developed by a pharmacist herself, MedTracker is an ongoing project designed to help patients manage the growing concern of polypharmacy for themselves and their loved ones.</h5>
+        <p>Take a look at some fun facts about your local pharmacists!</p>
+    </div>
 
+
+    <div id="index-facts">
+        <div class="row">
+            <div class="col-sm-6 mb-2">
+                <div class="card" style="background-color: #d7eaf4">
+                    <div class="card-body">
+                        <h5 class="card-title"> Pharmacists
+                        </h5>
+                        <p class="card-text">Who or what are they?
+                        <ul>
+                            <li>the most accessible healthcare professional</li>
+                            <li>do more than dispense pills</li>
+                            ...
+                        </ul>
+                        </p>
+                        <a href="#pharmacists" class="btn btn-secondary float-end view-more"> View More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-2">
+                <div class="card" style="background-color: #d7eaf4">
+                    <div class="card-body">
+                        <h5 class="card-title"> AMA Studies
+                        </h5>
+                        <p class="card-text">Too many medications?
+                        <ul>
+                            <li>Increases non adherence</li>
+                            <li>Increases risk of drug interactions</li>
+                            ...
+                        </ul>
+                        </p>
+                        <a href="#AMA-studies" class="btn btn-secondary float-end view-more"> View More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-2">
+                <div class="card" style="background-color: #d7eaf4">
+                    <div class="card-body">
+                        <h5 class="card-title"> Alarming Numbers
+                        </h5>
+                        <p class="card-text">Unexpected statistics
+                        <ul>
+                            <li>58% of Americans are on at least one prescription drug</li>
+                            <li>110 million prescriptions are never even picked up a year</li>
+                            ...
+                        </ul>
+                        </p>
+                        <a href="#alarming-numbers" class="btn btn-secondary float-end view-more view-more"> View More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-2">
+                <div class="card" style="background-color: #d7eaf4">
+                    <div class="card-body">
+                        <h5 class="card-title"> Interesting Facts
+                        </h5>
+                        <p class="card-text">Totally random but fun facts!
+                        <ul>
+                            <li>Coca-Cola was invented by a pharmacist named John Pemberton</li>
+                            <li>Lipitor is the best-selling drug of all time</li>
+                            ...
+                        </ul>
+                        </p>
+                        <a href="#interesting-facts" class="btn btn-secondary float-end view-more view-more"> View More</a>
+                    </div>
+                </div>
+            </div>
+
+
+           
+        </div>
+        <div class="container-fluid d-flex justify-content-center mt-5">
+            <div data-bs-spy="scroll" data-bs-target="#index-facts" data-bs-offset="0" data-bs-smooth-scroll="true"
+                class="scrollspy-example" tabindex="0">
+                <h4 id="pharmacists"> Pharmacists
+                </h4>
+                <a class="btn btn-secondary btn-sm float-end" href="/"></i>↑</a>
+                <p>Who or what are they?
+                <ul>
+                    <li>the most accessible healthcare professional</li>
+                    <li>do more than dispense pills</li>
+                    <li>hold Doctorate Degrees</li>
+                    <li>Pharmacists hold Doctorate Degrees</li>
+                    <li>can administer Vaccines in all 50 states</li>
+                    <li>provide MTM Services</li>
+                </ul>
+                </p>
+                <hr class="border border-success border-1 opacity-25">
+
+                <h4 id="AMA-studies"> AMA Studies
+                </h4>
+                <a class="btn btn-secondary btn-sm float-end" href="/"></i>↑</a>
+                <a class="btn btn-sm float-end view-more" href="/"></a>
+                <p class="card-text">Too many medications?
+                    <ul>
+                        <li>Increase non-adherence</li>
+                        <li>Increase risk of drug interactions</li>
+                        <li>Physicians can simplify dosing schedule by adjusting medicines to be taken same time everyday</li>
+                        <li>Switching to long-acting drugs can help if dosing burden is too complex</li>
+                        <li>Medications can be consolidated by using combination products</li>
+                        <li>Lack of symptoms/patients who don't feel any different when they start or stop a medication can lead to non-adherence as an attempt to reduce the amount of medications they take</li>
+                </ul>
+
+                </p>
+
+                <hr class="border border-success border-1 opacity-25">
+
+                <h4 id="alarming-numbers"> Alarming Numbers
+                </h4>
+                <a class="btn btn-secondary btn-sm float-end" href="/"></i>↑</a>
+                <p>Unexpected Statistics
+                <ul>
+                    <li>~187 million Americans (58%) are on at least one prescription drug</li>
+                    <li>110 million prescriptions a year are never even picked up</li>
+                    <li>Up to 50% of people don't take their medications as prescribed (wrong times, wrong amounts, wrong meds)</li>
+                    <li>Poor adherence leads to more than $500 billion in avoidable health care costs, around 125,0000 preventable deaths and up to 25% of hospitalizations in the United States</li>
+                </ul>
+                </p>
+                <hr class="border border-success border-1 opacity-25">
+
+                <h4 id="interesting-facts"> Interesting Facts
+                </h4>
+                <a class="btn btn-secondary btn-sm float-end" href="/"></i>↑</a>
+                <a class="btn btn-sm float-end view-more" href="/"></a>
+                <p>Totally random but fun facts!
+                <ul>
+                    <li>Coca-Cola was invented by a pharmacist named John Pemberton</li>
+                    <li>Another pharmacist, Charles Alderton, invented Dr. Pepper. Pepsi was also invented by a pharmacist</li>
+                    <li>Benjamin Franklin was a pharmacist, while Agatha Christie was a pharmacy technician</li>
+                    <li>Lipitor is the best-selling drug of all time</li>
+                    <li>Hydrocodone/acetaminophen is the most commonly prescribed medication in the United States. Lisinopril is No. 2, as of 2014</li>
+                    <li>Insulin is one of the most common medications that cause adverse events.</li>
+                </ul>
+                </p>
+                <hr class="border border-success border-1 opacity-25">
+            </div>
+        </div>
+    </div>
+
+    </main>
 </body>
 
 </html>
+
+<%- include('./partials/footer') %>

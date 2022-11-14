@@ -3,7 +3,8 @@ const Profile = require('../models/profile')
 
 module.exports = {
   new: newPharmacy,
-  create
+  create,
+  delete: deletePharmacy
 }
 
 function newPharmacy(req, res){
@@ -22,3 +23,11 @@ function newPharmacy(req, res){
       });
 })
 }
+
+function deletePharmacy(req, res) {
+  Pharmacy.findOne({'_id': req.params.id}).then(function(pharmacy) {
+    pharmacy.remove();
+    const profile = req.params.profileId
+      res.redirect(`/profiles/${profile}`);
+    });
+  }

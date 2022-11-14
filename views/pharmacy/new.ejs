@@ -8,6 +8,10 @@
 <label>Address:</label><br>
 <textarea type="string" name="address" required></textarea><br>
 <label>Phone Number:</label><br>
-<input type="tel" name="insName"><br><br>
+<input type="tel" name="phoneNo" maxlength="10"><br><br>
+<input name="profile" class="hide" value="<%= profile._id %>">
 <input type="submit" value="Add Pharmacy">
-</form>
+</form>      
+<br>
+<a href="/profiles/<%= profile._id %>" class="btn btn-outline-primary"> Back</a>
+<%- include('../partials/footer') %>

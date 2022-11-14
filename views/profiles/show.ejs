@@ -1,61 +1,69 @@
 <%- include('../partials/header') %>
 <%- include('../partials/navbar') %>
 
+<p>Welcome to <%= title %></p>
+
+<a href="/profiles" class="btn btn-outline-primary"> Back</a>
 <section id="show-page">
-    <div>Name: </div>
-    <div>
-      <%= profile.name %>
+    <div class="container text-center col-md-3">
+  <div class="card">
+    <div class="card-header" style="background-color: #98c7e2;">
+     <h5> <%= profile.name %></h5>
+     Relationship: <%= profile.relationship %>
     </div>
-    <div>Date of Birth: </div>
-    <div>
-      <%= profile.dateOfBirth.toISOString().slice(0, 10) %>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" style="background-color: #d7eaf4;"> <div>Date of Birth: </div>
+        <div>
+          <%= profile.dateOfBirth.toISOString().slice(0, 10) %>
+        </div></li>
+      <li class="list-group-item"  style="background-color: #d7eaf4;"><% if(profile.insName) { %>
+        <div>Insurance: </div>
+        <div>
+            Name: <%= profile.insName %>
+          </div>
+          <div>
+            Member ID: <%= profile.memberId %>
+          </div>
+          <div>
+            Group #: <%= profile.group %>
+          </div>
+          <div>
+            Bin #: <%= profile.binNo %>
+          </div>
+          <div>
+            PCN: <%= profile.pcn %>
+          </div>
+    
+        <% } else { %>
+        <div>
+          No insurance
+        </div>
+        <% } %>
+    </li>
+      <li class="list-group-item"  style="background-color: #d7eaf4;">  <% if(pharmacy) { %>
+    <div>Pharmacy Info.:</div>
+        <div>Pharmacy Name: <%= pharmacy.pharmName %>
     </div>
-    <% if(!profile.insurance) { %>
-    <div>Insurance: </div>
-    <div>
-        <%= profile.insName %>
+    <div>Address: <%= pharmacy.address %>
       </div>
+      <div>Phone Number: <%= pharmacy.phoneNo %>
+        </div>
+
+        <div>
+          <form action="/profiles/<%= profile._id %>/pharmacy/<%= pharmacy.id %>/?_method=DELETE" method="POST">
+            <input type="image" src="/images/delete.png" width="20px" height="20px"></input>
+            </form>
+        </div>
 
     <% } else { %>
     <div>
-      No insurance
+      No Pharmacy listed <br>
+      <a href="/profiles/<%= profile._id %>/pharmacy/new">Add Pharmacy</a><br>
     </div>
-    <% } %>
-  </section>
-  <a href="/profiles/<%= profile._id %>/pharmacy/new">Add Pharmacy</a><br>
-<a href="/profiles/<%= profile._id %>/medications/new">Add Medication</a>
+    <% } %></li>
+    </ul>
+  </div>
 
-<% if (profile.medications.length) { %>
-  <section id="medication-list">
-    <table>
-      <thead>
-        <tr>
-          <th>Edit</th>
-          <th>Medication</th>
-          <th>Directions</th>
-          <th>Qty</th>
-          <th>Day Supply</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% profile.medications.forEach(function(m) { %>
-          <tr>
-            <td><a href="/profiles/<%= profile._id %>/medications/<%= m._id %>/edit"><img src="/images/edit.png" width="20px" height="20px"></a>
-            <td><%= m.medName %> <%= m.dosage %></td>
-            <td><%= m.directions %></td>
-            <td><%= m.quantity %></td>
-            <td><%= m.daySupply %></td>
-            <td>
-                <form action="/medications/<%= m._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
-                </form>
-            </td>
-          </tr>
-          <% }); %>
-          <% } else { %>
-            <h5>No Medication Added Yet</h5>
-            <% } %>
-      </tbody>
-    </table>
-  </section>
+</section>
+
+  <%- include('../partials/footer') %>

@@ -5,7 +5,7 @@ const isLoggedIn = require("../config/auth");
 
 /* GET users listing. */
 
-router.get('/profiles/:id/medications/new', isLoggedIn, medicationsCtrl.new);
+router.get('/profiles/:id/medications', isLoggedIn, medicationsCtrl.show)
 router.post('/profiles/:id/medications', isLoggedIn, medicationsCtrl.create);
 router.delete('/medications/:id', isLoggedIn, medicationsCtrl.delete)
 router.get('/profiles/:id/medications/:id/edit', isLoggedIn, medicationsCtrl.edit);

@@ -9,5 +9,9 @@
   Directions: <br><textarea type="text" name="directions" value="<%= medication.directions %>"><%= medication.directions %></textarea><br>
   Quantity: <br><input type="text" name="quantity" value="<%= medication.quantity %>"><br>
   Day Supply: <br><input type="text" name="daySupply" value="<%= medication.daySupply %>"><br>
+  Indication: <br><input type="text" name="indication" value="<%= medication.indication %>"><br>
   <br><button type="submit">Save Medication</button>
 </form>
+<br>
+<a href="/profiles/<%= profile._id %>/medications" class="btn btn-outline-primary"> Back</a>
+<%- include('../partials/footer') %>

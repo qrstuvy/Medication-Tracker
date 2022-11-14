@@ -1,0 +1,93 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<p>Welcome to <%= title %></p>
+
+<a href="/profiles" class="btn btn-outline-primary"> Back</a>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+  </svg> Add Medication 
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New Medication</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/profiles/<%= profile._id %>/medications" method="POST" autocomplete="off">
+          <label>Medication Name:</label><br>
+          <input type="string" name="medName" required><br>
+          <label>Dosage:</label><br>
+          <input type="string" name="dosage"><br>
+          <label>Directions:</label><br>
+          <textarea type="string" name="directions"></textarea><br>
+          <label>Quantity:</label><br>
+          <input type="number" min="1" name="quantity"><br>
+          <label>Day Supply:</label><br>
+          <input type="number" min="1" name="daySupply">
+          <br>
+          <label>Indication:</label><br>
+          <input type="string" name="indication">
+          <br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container col-md-8">
+    <% if (profile.medications.length) { %>
+    <table class="table" style="background-color: #d7eaf4">
+      <thead>
+        <tr style="background-color: #98c7e2;">
+          <th scope="col">Edit</th>
+          <th scope="col">Medication</th>
+          <th scope="col">Directions</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Day Supply</th>
+          <th scope="col">Indication</th>
+          <th></th>
+        </tr>
+      </thead>
+      <% profile.medications.forEach(function(m) { %>
+      <tbody>
+        <tr>
+          <td><a href="/profiles/<%= profile._id %>/medications/<%= m._id %>/edit"><img src="/images/edit.png" width="20px" height="20px"></a>
+            <td><%= m.medName %> <%= m.dosage %></td>
+            <td><%= m.directions %></td>
+            <td><%= m.quantity %></td>
+            <td><%= m.daySupply %></td>
+            <td><%= m.indication %></td>
+            <td>
+                <form action="/medications/<%= m._id %>?_method=DELETE" method="POST">
+                    <input type="image" src="/images/delete.png" width="23px" height="23px"></input>
+                </form>
+            </td>
+        </tr>
+        <% }); %>
+        <% } else { %>
+          <h5>No Medication Added Yet</h5>
+          <% } %>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  </section>
+
+  <%- include('../partials/footer') %>

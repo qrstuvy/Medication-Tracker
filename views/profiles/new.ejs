@@ -4,17 +4,15 @@
 <h3>Create a Profile</h3>
 <form action="/profiles" method="POST" autocomplete="off">
 <label>Patient Information:</label><br><br>
+<label>Profile Image URL (optional):</label>
+<input type="string" name="image"><br>
 <label>Name:</label>
-<input type="string" name="name" required>
-<br>
-
+<input type="string" name="name" required><br>
 <label>Date of Birth:</label>
-<input type="date" name="dateOfBirth" required>
-<br><br>
-
+<input type="date" name="dateOfBirth" required><br><br>
+<label>Relationship:</label>
+<input type="string" name="relationship"><br>
 <label>Insurance Information:</label><br><br>
-<label>No insurance:</label>
-<input type="checkbox" name="insurance"><br>
 <label>Insurance name:</label>
 <input type="string" name="insName"><br>
 <label>Member ID:</label>
@@ -24,7 +22,9 @@
 <label>BIN Number:</label>
 <input type="string" name="binNo"><br>
 <label>PCN:</label>
-<input type="string" name="pcn"><br>
-<br>
+<input type="string" name="pcn"><br><br>
 <input type="submit" value="Add Profile">
 </form>
+<br>
+<a href="/profiles" class="btn btn-outline-primary"> Back</a>
+<%- include('../partials/footer') %>

@@ -1,4 +1,5 @@
 const Profile = require('../models/profile')
+const Pharmacy = require('../models/pharmacy')
 
 module.exports = {
     new: newProfile,
@@ -23,6 +24,9 @@ function newProfile(req, res) {
 }
 
 function create(req, res){
+  for(let key in req.body){
+    if(req.body[key]==="")delete req.body[key];
+    }
     req.body.insurance = !!req.body.insurance;
     const profile = new Profile(req.body)
     console.log(req.body)
@@ -34,8 +38,10 @@ function create(req, res){
 
 function show(req, res){
     Profile.findById(req.params.id, function(err, profile) {
-        res.render('profiles/show', { title: 'Profile Detail', profile });
+      Pharmacy.findOne({'profile': req.params.id}).then(function(pharmacy) {
+        res.render('profiles/show', { title: 'Profile Detail', profile, pharmacy });
     });
+})
 }
 
 function deleteProfile(req, res) {
@@ -56,15 +62,16 @@ function deleteProfile(req, res) {
       .then(function(profile) {
         profile.name = req.body.name
         profile.dateOfBirth = req.body.dateOfBirth
+        profile.relationship = req.body.relationship
         profile.insName = req.body.insName
         profile.memberId = req.body.memberId
         profile.group = req.body.group
         profile.binNo = req.body.binNo
         profile.pcn = req.body.pcn
-        console.log(req.body.insurance)
         profile.save(function(err) {
           if (err) return res.redirect('/profiles');
           res.redirect('/profiles');
         });
     })
     }
+

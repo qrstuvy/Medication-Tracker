@@ -1,13 +1,13 @@
 # Medication Tracker Full-Stack Application
 
+
 ## OVERVIEW
 
 Medication tracker to help those on multiple medication regimens manage theirs or their loved one's medications. Tracker will allow user to create profiles as well as store insurance card or pharmacy information.
 
-### Link
-- TBA
 
 ### Technology
+
 - OAuth
 - MongoDB
 - Mongoose
@@ -18,8 +18,21 @@ Medication tracker to help those on multiple medication regimens manage theirs o
 - JavaScript
 
 
+## Screenshots
+
+![index](public/images/index.png)
+![profile](public/images/profile.png)
+![addprofile](public/images/addprofile.png)
+![medlist](public/images/medlist.png)
+![addmed](public/images/addmed.png)
+
+
 ## INSTRUCTIONS
-- TBA
+
+- Index/public page displays various facts about pharmacies/pharmacists
+- Log in to access more features
+- Logged in users can create multiple profiles to manage medications for themselves and their loved ones
+- Insurance and pharmacy information can be added or editted
 
 
 ## RESTFUL CRUD ROUTES
@@ -40,10 +53,16 @@ As a user, I want the ability to...
 - add my pharmacy and insurance info
 ```
 
+
 ## Wireframes/Screenshots
 
 ![signin](public/images/signin.png)
 ![profiles](public/images/profiles.png)
+
+
+## Trello Board
+
+[Trello](https://trello.com/b/jVVHi0TI/project-2)
 
 
 ## Entity Relationship Diagram
@@ -52,4 +71,5 @@ As a user, I want the ability to...
 
 
 ## Credits
+
 Wireframes and ERD was created using [Lucidchart](https://www.lucidchart.com/).

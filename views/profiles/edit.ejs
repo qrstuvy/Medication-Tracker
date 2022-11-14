@@ -4,6 +4,9 @@
 <h3>Update Profile</h3>
 <form action="/profiles/<%= profile._id %>/?_method=PUT" method="POST" autocomplete="off">
 <label>Patient Information:</label><br><br>
+<label>Profile Image URL (optional):</label>
+<input type="string" name="name" value="<%= profile.image %>">
+<br>
 <label>Name:</label>
 <input type="string" name="name" required value="<%= profile.name %>">
 <br>
@@ -11,10 +14,9 @@
 <label>Date of Birth:</label>
 <input type="date" name="dateOfBirth" required value="<%= profile.dateOfBirth.toISOString().slice(0, 10) %>"> 
 <br><br>
-
+<label>Relationship:</label>
+<input type="string" name="relationship" value="<%= profile.relationship %>"><br>
 <label>Insurance Information:</label><br><br>
-<label>No insurance:</label>
-<input type="checkbox" name="insurance" value="<%= profile.insurance %>"><br>
 <label>Insurance name:</label>
 <input type="string" name="insName" value="<%= profile.insName %>"><br>
 <label>Member ID:</label>
@@ -28,3 +30,6 @@
 <br>
 <input type="submit" value="Update Profile">
 </form>
+<br>
+<a href="/profiles" class="btn btn-outline-primary"> Back</a>
+<%- include('../partials/footer') %>

@@ -9,13 +9,19 @@ const medicationSchema = new Schema ({
       min: 1
   },
   directions: String,
-  daySupply: String
+  daySupply: String,
+  indication: String
 })
 
 const profileSchema = new Schema(
   {
+    image: {
+      type: String,
+      default: "/images/default.png",
+    },
     name: String,
     dateOfBirth: Date,
+    relationship: String,
     insurance: { type: Boolean, default: false },
     insName: String,
     memberId: String,
