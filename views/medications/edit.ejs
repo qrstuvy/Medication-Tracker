@@ -3,6 +3,7 @@
 
 
 <h3>Update Medication</h3>
+<div class="form">
 <form action="/profiles/<%= profile._id %>/medications/<%= medication._id %>/?_method=PUT" method="POST" autocomplete="off">
   Name: <br><input type="text" name="medName" value="<%= medication.medName %>"><br>
   Dosage: <br><input type="text" name="dosage" value="<%= medication.dosage %>"><br>
@@ -11,7 +12,7 @@
   Day Supply: <br><input type="text" name="daySupply" value="<%= medication.daySupply %>"><br>
   Indication: <br><input type="text" name="indication" value="<%= medication.indication %>"><br>
   <br><button type="submit">Save Medication</button>
-</form>
+</form></div>
 <br>
 <a href="/profiles/<%= profile._id %>/medications" class="btn btn-outline-primary"> Back</a>
 <%- include('../partials/footer') %>

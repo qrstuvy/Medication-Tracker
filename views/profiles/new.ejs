@@ -2,16 +2,19 @@
 <%- include('../partials/navbar') %>
 
 <h3>Create a Profile</h3>
+<div class="form">
 <form action="/profiles" method="POST" autocomplete="off">
 <label>Patient Information:</label><br><br>
+
 <label>Profile Image URL (optional):</label>
-<input type="string" name="image"><br>
+<input type="string" name="image"><br><br>
+
 <label>Name:</label>
 <input type="string" name="name" required><br>
 <label>Date of Birth:</label>
-<input type="date" name="dateOfBirth" required><br><br>
+<input type="date" name="dateOfBirth" required><br>
 <label>Relationship:</label>
-<input type="string" name="relationship"><br>
+<input type="string" name="relationship"><br><br>
 <label>Insurance Information:</label><br><br>
 <label>Insurance name:</label>
 <input type="string" name="insName"><br>
@@ -24,7 +27,7 @@
 <label>PCN:</label>
 <input type="string" name="pcn"><br><br>
 <input type="submit" value="Add Profile">
-</form>
+</form></div>
 <br>
 <a href="/profiles" class="btn btn-outline-primary"> Back</a>
 <%- include('../partials/footer') %>

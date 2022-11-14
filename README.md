@@ -70,6 +70,11 @@ As a user, I want the ability to...
 ![ERD](public/images/erd.png)
 
 
+## Planned future enhancements
+
+- Implement function to include dates of pick-up, calculate due date according to day supply and refill tracker
+- Add cards to allow user to keep track of physician info
+
 ## Credits
 
 Wireframes and ERD was created using [Lucidchart](https://www.lucidchart.com/).

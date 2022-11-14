@@ -60,6 +60,7 @@ function deleteProfile(req, res) {
     function update(req, res) {
       Profile.findOne({'_id': req.params.id})
       .then(function(profile) {
+        profile.image = req.body.image
         profile.name = req.body.name
         profile.dateOfBirth = req.body.dateOfBirth
         profile.relationship = req.body.relationship
@@ -68,6 +69,7 @@ function deleteProfile(req, res) {
         profile.group = req.body.group
         profile.binNo = req.body.binNo
         profile.pcn = req.body.pcn
+        console.log(req.body)
         profile.save(function(err) {
           if (err) return res.redirect('/profiles');
           res.redirect('/profiles');

@@ -4,8 +4,10 @@
 <h3>Update Profile</h3>
 <form action="/profiles/<%= profile._id %>/?_method=PUT" method="POST" autocomplete="off">
 <label>Patient Information:</label><br><br>
+
 <label>Profile Image URL (optional):</label>
-<input type="string" name="name" value="<%= profile.image %>">
+<input type="string" name="image" value="<%= profile.image %>">
+
 <br>
 <label>Name:</label>
 <input type="string" name="name" required value="<%= profile.name %>">
