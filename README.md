@@ -18,23 +18,6 @@ Medication tracker to help those on multiple medication regimens manage theirs o
 - JavaScript
 
 
-## Screenshots
-
-![index](public/images/index.png)
-![profile](public/images/profile.png)
-![addprofile](public/images/addprofile.png)
-![medlist](public/images/medlist.png)
-![addmed](public/images/addmed.png)
-
-
-## INSTRUCTIONS
-
-- Index/public page displays various facts about pharmacies/pharmacists
-- Log in to access more features
-- Logged in users can create multiple profiles to manage medications for themselves and their loved ones
-- Insurance and pharmacy information can be added or editted
-
-
 ## RESTFUL CRUD ROUTES
 
 ![restful](public/images/restfulroute.png)
@@ -58,6 +41,23 @@ As a user, I want the ability to...
 
 ![signin](public/images/signin.png)
 ![profiles](public/images/profiles.png)
+
+
+## Screenshots
+
+![index](public/images/index.png)
+![profile](public/images/profile.png)
+![addprofile](public/images/addprofile.png)
+![medlist](public/images/medlist.png)
+![addmed](public/images/addmed.png)
+
+
+## INSTRUCTIONS
+
+- Index/public page displays various facts about pharmacies/pharmacists
+- Log in to access more features
+- Logged in users can create multiple profiles to manage medications for themselves and their loved ones
+- Insurance and pharmacy information can be added or editted
 
 
 ## Trello Board
