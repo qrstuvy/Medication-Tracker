@@ -23,6 +23,11 @@ Medication tracker to help those on multiple medication regimens manage theirs o
 ![restful](public/images/restfulroute.png)
 
 
+## Entity Relationship Diagram
+
+![ERD](public/images/erd.png)
+
+
 ## USER STORIES
 ```
 As a user, I want the ability to...
@@ -63,11 +68,6 @@ As a user, I want the ability to...
 ## Trello Board
 
 [Trello](https://trello.com/b/jVVHi0TI/project-2)
-
-
-## Entity Relationship Diagram
-
-![ERD](public/images/erd.png)
 
 
 ## Planned future enhancements
